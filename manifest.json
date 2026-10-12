@@ -1,0 +1,17 @@
+{
+  "plugin_id": "kiss_info_plugin",
+  "display_name": "KISS 官方情报",
+  "version": "1.0.1",
+  "author": "紫小贱",
+  "icon": "icon.png",
+  "description": "抓取 KISS 官网，获取 COM3D2/CM3D2/CRC3D/CR EditSystem 的最新版本、官方公告、活动、DLC 情况。轻量抓取+缓存增量比对，命中缓存零 token 秒回。",
+  "core_version": ">=2.29.7",
+  "repo": "https://github.com/znq19/KiraAI_kiss_info_plugin",
+  "tags": [
+    "kiss",
+    "com3d2",
+    "cm3d2",
+    "updates",
+    "crawler"
+  ]
+}

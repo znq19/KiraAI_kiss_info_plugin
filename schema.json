@@ -1,0 +1,116 @@
+{
+  "section_main": {
+    "type": "section",
+    "name": "基本设置",
+    "collapsed": false,
+    "fields": {
+      "enabled": {
+        "type": "switch",
+        "name": "启用插件",
+        "default": true,
+        "hint": "关闭后工具与命令全部不生效"
+      },
+      "enable_llm_tool": {
+        "type": "switch",
+        "name": "启用 LLM 工具",
+        "default": true,
+        "hint": "是否注册 kiss_info_query 工具给 LLM 调用"
+      },
+      "enable_command": {
+        "type": "switch",
+        "name": "启用命令",
+        "default": false,
+        "hint": "是否响应下方配置的触发命令，默认关"
+      },
+      "commands": {
+        "type": "list",
+        "name": "触发命令",
+        "default": [
+          "/kiss"
+        ],
+        "hint": "每行一个命令，消息以命令前缀开头即触发，不限于斜杠式"
+      },
+      "content_depth": {
+        "type": "string",
+        "name": "默认内容深度",
+        "options": [
+          "brief",
+          "full"
+        ],
+        "default": "brief",
+        "hint": "brief=只版本号/标题，full=含具体内容"
+      },
+      "auto_check": {
+        "type": "switch",
+        "name": "自动检查更新",
+        "default": false,
+        "hint": "开启后按下方间隔自动检查并推送，默认关"
+      },
+      "push_mode": {
+        "type": "string",
+        "name": "推送方式",
+        "options": [
+          "bot",
+          "raw"
+        ],
+        "default": "bot",
+        "hint": "bot=把情报作为系统消息交给 AI，让它用自己的口吻播报（推荐）；raw=不经过 AI，直接把原文投递到目标会话"
+      },
+      "push_also_raw": {
+        "type": "switch",
+        "name": "同时机械投递原文",
+        "default": false,
+        "hint": "开启后，除了让 AI 用自己的口吻播报，还会**同时**把整理好的原文直接投递一份到目标会话（两种都发，互不替代）。仅在「推送方式 = bot」时有效；选 raw 时本来就发原文，无需开启。"
+      },
+      "check_interval": {
+        "type": "integer",
+        "name": "自动检查间隔秒",
+        "default": 86400,
+        "hint": "自动检查间隔，默认1天"
+      },
+      "push_targets": {
+        "type": "list",
+        "name": "推送作用域目标",
+        "default": [],
+        "hint": "每行一个目标，格式：群=qq:gm:群号，私聊=qq:dm:QQ号。留空则不推送"
+      }
+    }
+  },
+  "section_sources": {
+    "type": "section",
+    "name": "数据源开关",
+    "collapsed": true,
+    "fields": {
+      "src_cm3d2": {
+        "type": "switch",
+        "name": "CM3D2 更新",
+        "default": true
+      },
+      "src_com3d2": {
+        "type": "switch",
+        "name": "COM3D2&2.5 更新",
+        "default": true
+      },
+      "src_crc3d": {
+        "type": "switch",
+        "name": "CRC3D 官网",
+        "default": true
+      },
+      "src_cres": {
+        "type": "switch",
+        "name": "CR EditSystem 更新",
+        "default": true
+      },
+      "src_news": {
+        "type": "switch",
+        "name": "KISS 公告",
+        "default": true
+      },
+      "src_dlc_shop": {
+        "type": "switch",
+        "name": "DLC 商店",
+        "default": true
+      }
+    }
+  }
+}
